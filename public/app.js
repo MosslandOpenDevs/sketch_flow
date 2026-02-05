@@ -71,9 +71,9 @@ function render() {
     const el = document.createElement("article");
     el.className = "card";
     const pub = item.pubDate ? new Date(item.pubDate).toLocaleString() : "";
-    const summaryFull = item.summary?.[lang] || item.contentSnippet || "";
+    const summaryFull = getSafeText(item.summary, lang) || item.contentSnippet || "";
     const summary = summaryMode === "short" ? shorten(summaryFull) : summaryFull;
-    const discussion = item.discussion?.[lang] || item.discussion?.output || "";
+    const discussion = getSafeText(item.discussion, lang);
 
     el.innerHTML = `
       <h3><a href="${item.link}" target="_blank" rel="noreferrer">${item.title}</a></h3>
@@ -172,6 +172,12 @@ function hydrateSourceFilter() {
     sourceEl.appendChild(opt);
   }
   sourceEl.value = sources.includes(current) ? current : "";
+}
+
+function getSafeText(field, lang) {
+  if (!field) return "";
+  if (typeof field === "string") return field;
+  return field[lang] || "";
 }
 
 function shorten(text) {

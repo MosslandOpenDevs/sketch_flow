@@ -44,6 +44,13 @@ cron.schedule(cronExpr, async () => {
 
 app.listen(config.port, () => {
   console.log(`Server running on :${config.port}`);
+  console.log(`LLM provider: ${config.llmProvider}`);
+  if (config.llmProvider === "lmstudio") {
+    console.log(`LM Studio: ${config.lmstudio.url} (model: ${config.lmstudio.model})`);
+  } else {
+    console.log(`Gemini model: ${config.geminiModel} (key: ${config.geminiApiKey ? "set" : "NOT SET"})`);
+  }
+  console.log(`Fetch interval: every ${config.fetchEveryMinutes} min`);
 });
 
 // Initial fetch on startup
