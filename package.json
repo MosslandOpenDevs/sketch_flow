@@ -1,0 +1,17 @@
+﻿{
+  "name": "feed-insight-service",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "node-cron": "^3.0.3",
+    "rss-parser": "^3.13.0",
+    "zod": "^3.23.8",
+    "@google/generative-ai": "^0.16.0"
+  }
+}
