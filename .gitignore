@@ -41,8 +41,9 @@ build/Release
 node_modules/
 jspm_packages/
 
-# Data output
-data/
+# Data output (keep the committed sample, ignore live data)
+/data/*
+!/data/items.sample.json
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/

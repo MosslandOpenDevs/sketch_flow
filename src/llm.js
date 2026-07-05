@@ -12,7 +12,7 @@ const SYSTEM_PROMPT = `당신은 개발 콘텐츠 요약 및 토론 생성기입
 요약은 3~5문장. 토론은 3명의 페르소나가 각각 주장하고, 마지막에 장점/단점/결론을 정리합니다.
 토론이 필요 없는 경우 discussion은 빈 문자열로 주세요.`;
 
-function extractJson(raw) {
+export function extractJson(raw) {
   // ```json ... ``` 또는 ``` ... ``` 코드블록 제거
   const fenced = raw.match(/```(?:json)?\s*\n?([\s\S]*?)```/);
   if (fenced) return fenced[1].trim();

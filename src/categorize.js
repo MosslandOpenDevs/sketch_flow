@@ -30,10 +30,11 @@ export function categorizeItem(item) {
   const toolScore = score(text, toolKeywords);
 
   const max = Math.max(ideaScore, issueScore, toolScore);
+  // "개발 아이디어" is the default/fallback, so it also wins ties (checked first).
   if (max === 0) return "개발 아이디어";
+  if (max === ideaScore) return "개발 아이디어";
   if (max === issueScore) return "개발 이슈/논쟁";
-  if (max === toolScore) return "새 도구/제품";
-  return "개발 아이디어";
+  return "새 도구/제품";
 }
 
 function score(text, keywords) {

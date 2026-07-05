@@ -1,0 +1,35 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Show HN: A tiny local-first note-taking idea",
+    "link": "https://example.com/show-hn-note-idea",
+    "pubDate": "2026-02-05T09:00:00.000Z",
+    "contentSnippet": "An experiment in offline-first note capture with a plaintext store.",
+    "category": "개발 아이디어",
+    "createdAt": "2026-02-05T09:01:00.000Z",
+    "summary": {
+      "ko": "로컬 우선(offline-first) 노트 앱 아이디어로, 평문 저장소를 사용해 오프라인에서 메모를 빠르게 캡처합니다.",
+      "en": "A local-first note-taking idea that uses a plaintext store to capture notes quickly while offline."
+    },
+    "discussion": {
+      "ko": "찬성: 단순하고 이식성이 높다. 반대: 동기화/충돌 해결이 과제. 결론: 개인용 프로토타입으로 적합.",
+      "en": "Pro: simple and portable. Con: sync/conflict resolution is the hard part. Verdict: a good fit for a personal prototype."
+    },
+    "aiModel": "gemini-1.5-flash"
+  },
+  {
+    "source": "DEV Community",
+    "title": "New CLI framework 2.0 released",
+    "link": "https://example.com/cli-framework-2",
+    "pubDate": "2026-02-05T08:30:00.000Z",
+    "contentSnippet": "Version 2.0 of the framework ships plugin support and faster startup.",
+    "category": "새 도구/제품",
+    "createdAt": "2026-02-05T08:31:00.000Z",
+    "summary": {
+      "ko": "CLI 프레임워크 2.0이 출시되어 플러그인 지원과 더 빠른 시작 시간을 제공합니다.",
+      "en": "Version 2.0 of the CLI framework adds plugin support and faster startup."
+    },
+    "discussion": { "ko": "", "en": "" },
+    "aiModel": "gemini-1.5-flash"
+  }
+]
