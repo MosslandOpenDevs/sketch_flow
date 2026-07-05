@@ -120,3 +120,31 @@ Open `http://localhost:3000` after the server starts.
   once and remembers it in the browser (`localStorage`).
 - This is a single-operator local dashboard. It has no authentication beyond the
   optional `FETCH_TOKEN`; do not expose it to untrusted networks as-is.
+
+## Roadmap & Future Directions
+
+This repository is a working prototype — deliberately small, file-backed, and
+single-operator. Think of it as a foundation to build on rather than a finished
+product. Some directions worth exploring:
+
+- **Smarter classification.** The categorizer is keyword-based and Korean/English
+  only. Embedding- or LLM-based classification (with confidence scores and
+  user-defined categories) would handle nuance and new topics far better.
+- **A real datastore.** `data/items.json` is easy to reason about but caps at 500
+  items with no indexing. SQLite/Postgres would unlock full-text search, dedup on
+  normalized URLs, retention policies, and safe concurrent access.
+- **A more robust LLM pipeline.** Calls are currently sequential. Bounded
+  concurrency, retries with backoff, response caching, and stricter output
+  validation/sanitization (defense-in-depth against prompt injection) would make
+  ingestion faster and safer. Embeddings could also cluster related items.
+- **User-managed feeds.** Feeds are hard-coded in `src/feeds.js`. Adding/removing
+  feeds from the UI (with OPML import and per-feed rules) would make it reusable.
+- **A richer frontend.** The vanilla-JS FE is intentionally minimal. Read/unread
+  state, favorites, live updates (SSE/WebSocket), and theming are natural next
+  steps; a small framework would help if it grows.
+- **Production readiness.** Real authentication and multi-user support, rate
+  limiting, containerization, and CI (running `npm test` + `npm audit` on every
+  push) would take it from "runs on my machine" to "deployable."
+
+Contributions and forks are welcome — treat the current code as a starting point,
+not a constraint.
