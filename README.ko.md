@@ -1,5 +1,9 @@
 # SketchFlow
 
+<!-- opendevs-badges:start -->
+[![License: MIT](https://img.shields.io/badge/License-MIT-64748b?style=flat)](LICENSE)
+<!-- opendevs-badges:end -->
+
 [English](README.md) · **한국어**
 
 RSS/피드를 일정 주기로 수집하고, 3가지 카테고리로 분류합니다.
